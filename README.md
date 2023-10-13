@@ -14,6 +14,8 @@ days.
 
 Highly recommended to run in the VM as VPN connection with change frequently
 
+`.env` needs `VPN_USER=${YOUR_USER}` & `VPN_PASS=${YOUR_PASS}`
+
 ### Usage
 
 NOTE: Changes frequently, README might lag. 

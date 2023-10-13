@@ -37,3 +37,12 @@ def sleep(seconds: int):
         i = i - 1
         print("sleep", i, get_ip())
         time.sleep(1)
+
+
+# db = mysql.connector.connect(
+#     host=os.environ.get("DB_HOST"),
+#     user=os.environ.get("DB_USER"),
+#     passwd=os.environ.get("DB_PASS"),
+#     database=os.environ.get("DB_NAME"),
+# )
+# cursor = db.cursor()

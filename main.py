@@ -1,10 +1,7 @@
 import json
 import os
 import time
-import requests
-# import mysql.connector
 from dotenv import load_dotenv
-
 from download_chart_data import download_chart_data
 from download_markets import download_all_coins, download_markets, print_progress
 from vpn_switcher.vpn_switcher import VPNSwitcher
@@ -15,21 +12,8 @@ from typing import List, Dict
 
 load_dotenv()
 
-# db = mysql.connector.connect(
-#     host=os.environ.get("DB_HOST"),
-#     user=os.environ.get("DB_USER"),
-#     passwd=os.environ.get("DB_PASS"),
-#     database=os.environ.get("DB_NAME"),
-# )
-# cursor = db.cursor()
-
 
 def main():
-    # Download coins & markets
-    import json
-    from vpn_switcher.vpn_switcher import VPNSwitcher
-    from download_markets import download_all_coins, download_markets
-
     vpn_switcher = VPNSwitcher(
         os.environ.get("VPN_USER"),
         os.environ.get("VPN_PASS"),

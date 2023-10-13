@@ -36,19 +36,19 @@ def main():
     )
     vpn_switcher.next()
 
-    # print("Downloading coins")
-    # coins = download_all_coins()
-    # with open("tmp/coins.json", 'w') as f:
-    #     f.write(json.dumps(coins))
-    #
-    # print("Downloading markets")
-    # markets = download_markets(vpn_switcher)
-    # with open("tmp/markets.json", 'w') as f:
-    #     f.write(json.dumps(markets))
+    print("Downloading coins")
+    coins = download_all_coins()
+    with open("tmp/coins.json", 'w') as f:
+        f.write(json.dumps(coins))
 
-    markets = list()
-    with open("tmp/markets.json", 'r') as f:
-        markets = json.load(f)
+    print("Downloading markets")
+    markets = download_markets(vpn_switcher)
+    with open("tmp/markets.json", 'w') as f:
+        f.write(json.dumps(markets))
+
+    # markets = list()
+    # with open("tmp/markets.json", 'r') as f:
+    #     markets = json.load(f)
 
     now = datetime.datetime.now() - relativedelta(months=3)
     ts = int(now.timestamp())

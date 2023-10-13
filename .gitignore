@@ -160,4 +160,7 @@ cython_debug/
 .idea/
 
 tmp/**
+data/*.json
+data/chart/*.json
+data/candles/*.json
 vpn_switcher/vpn_profiles/**

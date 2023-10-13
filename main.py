@@ -22,18 +22,13 @@ def main():
 
     print("Downloading coins")
     coins = download_all_coins()
-    with open("tmp/coins.json", 'w') as f:
-        f.write(json.dumps(coins))
+    utils.write_json_file("data/coins.json", json.dumps(coins))
 
     print("Downloading markets")
     markets = download_markets(vpn_switcher)
-    with open("tmp/markets.json", 'w') as f:
-        f.write(json.dumps(markets))
+    utils.write_json_file("data/markets.json", json.dumps(markets))
 
-    # markets = list()
-    # with open("tmp/markets.json", 'r') as f:
-    #     markets = json.load(f)
-
+    # coin gecko does not return daily chart in nearest 3 months
     now = datetime.datetime.now() - relativedelta(months=3)
     ts = int(now.timestamp())
     failed_idxs = list()
@@ -53,7 +48,7 @@ def main():
             print("Failed indexes", failed_idxs)
 
         if data is not None:
-            with open("tmp/" + coingecko_id + "_usd_chart_data.json", 'w') as f:
+            with open("data/chart/" + coingecko_id + "_usd_chart_data.json", 'w') as f:
                 f.write(json.dumps(data))
 
     print("Failed indexes", failed_idxs)

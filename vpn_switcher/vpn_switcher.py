@@ -58,7 +58,9 @@ class VPNSwitcher(VPNSwitcherInterface):
             time.sleep(1)
         self.process = Process(target=execute_cmd, args=(cmd,))
         self.process.start()
-        time.sleep(15)
+        # need to sleep 5 min / len(profiles) to ensure each profile is hit at
+        # most once every 5 min.
+        time.sleep(300.0 / float(len(self.profiles)))
 
     def next(self):
         self.curr_profile_idx += 1

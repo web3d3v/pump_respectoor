@@ -1,33 +1,34 @@
-from utils import std_headers, REQ_INTERVAL
-from vpn_switcher.vpn_switcher import VPNSwitcher
+from coin_checko_api import CoinGeckoAPI
+from utils import print_progress, write_json_file
 from typing import List, Dict
-import requests
-import time
 import json
 import pandas as pd
+
+
+def download_chart_datas(ids: List[str], _from: int, to: int, api: CoinGeckoAPI):
+    ids_cnt = len(ids)
+    for idx, coingecko_id in enumerate(ids):
+        print_progress(coingecko_id, idx, ids_cnt)
+        data = download_chart_data(coingecko_id, _from, to, api)
+        if data is not None:
+            write_json_file(
+                "data/chart/" + coingecko_id + ".json",
+                json.dumps(data)
+            )
 
 
 def download_chart_data(
     id: str,
     _from: int,
     to: int,
-    vpn_switcher: VPNSwitcher,
-    retry_cnt: int = 0
-) -> List[Dict[str, any]]:
+    api: CoinGeckoAPI,
+) -> List[Dict[str, any]] | None:
     url = "https://api.coingecko.com/api/v3/coins/"
     url += id + "/market_chart/range?vs_currency=usd"
     url += "&from={}&to={}&precision=18".format(_from, to)
 
-    time.sleep(REQ_INTERVAL)
-    response = requests.get(url, headers=std_headers(), stream=False)
-    if response.status_code != 200:
-        print(response.status_code)
-        if retry_cnt == 0:
-            return None
-        vpn_switcher.next()
-        time.sleep(2)
-        return download_chart_data(id, _from, to, vpn_switcher, retry_cnt - 1)
-    return json.loads(response.content)
+    response = api.fetch_content(url)
+    return None if response is None else json.loads(response)
 
 
 def chart_data_to_df(chart_data: List[Dict[str, any]], ) -> pd.DataFrame:

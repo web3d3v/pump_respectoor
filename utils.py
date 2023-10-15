@@ -5,9 +5,6 @@ import json
 from datetime import datetime
 from typing import List, Dict
 
-REQ_INTERVAL = 2.1
-REQ_INTERVAL_LONG = 5 * 60
-
 
 def print_progress(prefix: str, curr: int, total: int, same_line: bool = False):
     page_str = 'idx: {} / {}'.format(curr, total)

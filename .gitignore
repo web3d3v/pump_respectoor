@@ -163,5 +163,8 @@ tmp/**
 data/*.json
 data_old/**
 data/chart/*.json
-data/candles/*.json
+data/chart_auto/*.json
+data/candles_daily/*.json
+data/candles_auto/*.json
+data/coin/*.json
 vpn_switcher/vpn_profiles/**

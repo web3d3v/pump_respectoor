@@ -6,7 +6,7 @@ from datetime import datetime
 from typing import List, Dict
 
 
-def print_progress(prefix: str, curr: int, total: int, same_line: bool = False):
+def print_progress(prefix: str, curr: int, total: int, same_line: bool = True):
     page_str = 'idx: {} / {}'.format(curr, total)
     prog_str = ', {:.1%}'.format(float(curr) / float(total))
     space = '       '
@@ -50,6 +50,17 @@ def write_json_file(path: str, data: any):
     if data is not None:
         with open(path, 'w') as f:
             f.write(json.dumps(data))
+
+
+def get_info() -> Dict[any, any]:
+    try:
+        return read_json_file('data/info.json')
+    except:
+        return dict()
+
+
+def set_info(info: Dict[any: any]):
+    write_json_file('data/info.json', info)
 
 
 def year(timestamp: int) -> int:

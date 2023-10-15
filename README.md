@@ -3,6 +3,7 @@
 
 Analyzing the frequency of pumps of coins listed on [Coin Gecko](https://www.coingecko.com/).
 
+## NOTE: A lot of frequent changes. README lags behind, will be updated once it settles
 
 ## Usage 
 Use `main.ipynb` to analyze the data

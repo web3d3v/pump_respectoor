@@ -1,11 +1,14 @@
 import os
 import time
+import traceback
+
 import requests
 from enum import Enum
 from utils import std_headers
 from vpn_switcher.vpn_switcher import VPNSwitcherInterface, VPNSwitcher
 from typing import List, Dict
 from dotenv import load_dotenv
+import urllib
 
 load_dotenv()
 
@@ -45,16 +48,30 @@ class CoinGeckoAPI:
 
     def fetch_content(self, url: str, retry_cnt: int = 3) -> bytes | None:
         response = self.fetch_response(url, retry_cnt)
+        if response.status_code != 200:
+            print(response)
+            print(response.status_code, self.policy_url(url))
         return None if response.status_code != 200 else response.content
 
     def fetch_response(self, url: str, retry_cnt: int = 3) -> requests.Response | None:
         time.sleep(self.exec_policy.request_sleep_interval())
-        _url = url
+        _url = self.policy_url(url)
+        try:
+            response = requests.get(_url, headers=std_headers(), stream=False)
+        except:
+            print("An exception occurred", url)
+            traceback.print_exc()
 
-        if self.exec_policy == ExecPolicy.API_KEY:
-            _url = url + "&x_cg_pro_api_key=" + self.api_key
+            if retry_cnt < 0:
+                self.failed_requests.append(url)
+                print("Failed requests", self.failed_requests)
+                return None
 
-        response = requests.get(_url, headers=std_headers(), stream=False)
+            if retry_cnt > 0:
+                time.sleep(5)
+
+            time.sleep(5 if retry_cnt > 0 else 300)
+            return self.fetch_response(url, retry_cnt - 1)
 
         if response.status_code == 429:
 
@@ -75,3 +92,11 @@ class CoinGeckoAPI:
             self.fetch_response(url, retry_cnt - 1)
 
         return response
+
+    def policy_url(self, url: str) -> str:
+        if self.exec_policy == ExecPolicy.API_KEY:
+            return url.replace(
+                "https://api.coingecko.com",
+                "https://pro-api.coingecko.com"
+            ) + "&x_cg_pro_api_key=" + self.api_key
+        return url

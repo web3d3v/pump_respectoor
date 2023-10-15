@@ -161,6 +161,7 @@ cython_debug/
 
 tmp/**
 data/*.json
+data_old/**
 data/chart/*.json
 data/candles/*.json
 vpn_switcher/vpn_profiles/**

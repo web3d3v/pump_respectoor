@@ -6,7 +6,8 @@ from utils import print_progress
 
 def download_all_coins(api: CoinGeckoAPI) -> List[Dict[str, any]]:
     url = 'https://api.coingecko.com/api/v3/coins/list?include_platform=true'
-    return json.loads(api.fetch_content(url))
+    result = api.fetch_content(url)
+    return json.loads(result)
 
 
 def markets_url(page: int) -> str:

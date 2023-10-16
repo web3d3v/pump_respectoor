@@ -97,6 +97,15 @@ def year_month_keys(years: List[int], months: List[int]) -> List[str]:
             keys.append("{}-{:02d}".format(year, month))
     return keys
 
+
+def large_num_short_format(num):
+    num = float('{:.3g}'.format(num))
+    magnitude = 0
+    while abs(num) >= 1000:
+        magnitude += 1
+        num /= 1000.0
+    return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
+
 # db = mysql.connector.connect(
 #     host=os.environ.get("DB_HOST"),
 #     user=os.environ.get("DB_USER"),

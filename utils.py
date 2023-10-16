@@ -41,7 +41,7 @@ def sleep(seconds: int):
         time.sleep(1)
 
 
-def read_json_file(path: str):
+def read_json_file(path: str) -> object:
     with open(path, 'r') as f:
         return json.load(f)
 
@@ -53,14 +53,25 @@ def write_json_file(path: str, data: any):
 
 
 def get_info() -> Dict[any, any]:
+    read_json_file_or_empty_dict('data/info.json')
+
+
+def set_info(info: Dict[any, any]):
+    write_json_file('data/info.json', info)
+
+
+def read_json_file_or_empty_dict(path: str) -> Dict[any, any]:
     try:
-        return read_json_file('data/info.json')
+        return read_json_file(path)
     except:
         return dict()
 
 
-def set_info(info: Dict[any: any]):
-    write_json_file('data/info.json', info)
+def read_json_file_or_empty_list(path: str) -> List[any]:
+    try:
+        return read_json_file(path)
+    except:
+        return list()
 
 
 def year(timestamp: int) -> int:
@@ -69,6 +80,10 @@ def year(timestamp: int) -> int:
 
 def month(timestamp: int) -> int:
     return int(datetime.utcfromtimestamp(timestamp).strftime('%m'))
+
+
+def day_of_month(timestamp: int) -> int:
+    return int(datetime.utcfromtimestamp(timestamp).strftime('%d'))
 
 
 def year_month_str(timestamp: int) -> str:

@@ -13,7 +13,7 @@ def download_coin_datas(
 ):
     ids_cnt = len(ids)
     for idx, coingecko_id in enumerate(ids):
-        print_progress("Downloading candles " + coingecko_id, idx, ids_cnt)
+        print_progress("Downloading coin " + coingecko_id, idx, ids_cnt)
         data = download_coin_data(coingecko_id, api)
         if data is not None:
             write_json_file("data/coin/" + coingecko_id + ".json", data)

@@ -1,10 +1,10 @@
 from enum import Enum
-
 from coin_checko_api import CoinGeckoAPI
 from typing import List, Dict
-import json
+from utils import write_json_file, print_progress, read_json_file
 import pandas as pd
-from utils import write_json_file, print_progress
+import json
+import os
 
 
 class CandleInterval(Enum):
@@ -46,6 +46,23 @@ def download_candle_datas(
             )
 
 
+def load_candles_by_interval(
+    interval: CandleInterval = CandleInterval.DAILY
+) -> Dict[str, List[List[any]]]:
+    files = os.listdir("data/" + interval.folder_name())
+    total = len(files)
+    candles_data: Dict[str, List[List[any]]] = dict()
+
+    for idx, file in enumerate(files):
+        coingecko_id = file.replace('.json', '')
+        candles = read_json_file("data/" + interval.folder_name() + "/" + file)
+        if len(candles) > 0:
+            candles_data[coingecko_id] = candles
+        print_progress("Loading " + interval.folder_name(), idx, total, True)
+
+    return candles_data
+
+
 def download_candle_data(
     id: str,
     interval: CandleInterval,
@@ -57,10 +74,15 @@ def download_candle_data(
     return None if response is None else json.loads(response)
 
 
-def candles_data_to_df(candles: List[List[int]]) -> pd.DataFrame:
-    df = pd.DataFrame(columns=['timestamp', 'open', 'high', 'low', 'close'])
-    for idx, candle in enumerate(candles):
-        df.loc[idx] = candle
-    df['timestamp'] = df.apply(lambda x: int(x['timestamp'] / 1000), axis=1)
+def daily_candle_data_to_df(candle_data: List[List[any]]) -> pd.DataFrame:
+    df = pd.DataFrame(
+        data={
+            'timestamp': list(map(lambda x: int(x[0] / 1000), candle_data)),
+            "open": list(map(lambda x: x[1], candle_data)),
+            "high": list(map(lambda x: x[2], candle_data)),
+            "low": list(map(lambda x: x[3], candle_data)),
+            "close": list(map(lambda x: x[4], candle_data))
+        }
+    )
     df = df.set_index('timestamp')
     return df

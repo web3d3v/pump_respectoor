@@ -164,6 +164,7 @@ data/*.json
 data_old/**
 data/chart/*.json
 data/chart_auto/*.json
+data/chart_full/*.json
 data/candles_daily/*.json
 data/candles_auto/*.json
 data/coin/*.json

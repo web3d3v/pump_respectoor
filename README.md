@@ -42,6 +42,7 @@ I've finished pump analyses. I never would have though in this market you've got
 every 4.5 days with $1mil volume. For 1.5x you've got 5.33 coins doing that 
 every day with at least $1mil volume on the pump day. These number continue to 
 blow my mind. That's out 10k coins on Goin Gecko.
+
 ![1.5x](results/1.5x.png)
 ![2x](results/2x.png)
 ![4x](results/4x.png)

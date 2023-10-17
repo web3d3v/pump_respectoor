@@ -2,6 +2,7 @@ import requests
 import time
 import platform
 import json
+import os
 from datetime import datetime
 from typing import List, Dict
 
@@ -32,6 +33,19 @@ def get_ip():
     data = response.json()
     return data['ip']
 
+
+def create_data_folders_if_needed():
+    paths = [
+        'data/candles_auto',
+        'data/candles_daily',
+        'data/chart',
+        'data/chart_auto',
+        'data/chart_full',
+        'data/coin',
+    ]
+    for path in paths:
+        if not os.path.exists(path):
+            os.makedirs(path)
 
 def sleep(seconds: int):
     i = seconds

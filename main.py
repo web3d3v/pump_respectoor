@@ -1,5 +1,7 @@
 import json
 from dotenv import load_dotenv
+
+import utils
 from coin_checko_api import CoinGeckoAPI, ExecPolicy
 from download_candles import download_candle_datas, CandleInterval
 from download_chart_data import download_chart_data, download_chart_datas, ChartInterval, download_chart_by_interval
@@ -14,6 +16,7 @@ load_dotenv()
 
 def main():
     api = CoinGeckoAPI(ExecPolicy.API_KEY)
+    utils.create_data_folders_if_needed()
 
     print("Downloading coins")
     coins = download_all_coins(api)

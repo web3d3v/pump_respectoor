@@ -1,0 +1,85 @@
+year/month,100K,100K,500K,500K,1M,1M,10M,10M
+2017-01,0.0,,0.0,,0.0,,0.0,
+2017-02,0.0,,0.0,,0.0,,0.0,
+2017-03,1.0,"bitcoin-plus, ",1.0,"bitcoin-plus, ",1.0,"bitcoin-plus, ",1.0,"bitcoin-plus, "
+2017-04,0.0,,0.0,,0.0,,0.0,
+2017-05,0.0,,0.0,,0.0,,0.0,
+2017-06,1.0,"xtrabytes, ",0.0,,0.0,,0.0,
+2017-07,0.0,,0.0,,0.0,,0.0,
+2017-08,0.0,,0.0,,0.0,,0.0,
+2017-09,0.0,,0.0,,0.0,,0.0,
+2017-10,1.0,"binancecoin, ",1.0,"binancecoin, ",1.0,"binancecoin, ",0.0,
+2017-11,3.0,"ripio-credit-network, lunyr, amber, ",2.0,"ripio-credit-network, amber, ",2.0,"ripio-credit-network, amber, ",0.0,
+2017-12,2.0,"presearch, bitmark, ",1.0,"bitmark, ",1.0,"bitmark, ",0.0,
+2018-01,2.0,"luxcoin, game, ",2.0,"luxcoin, game, ",1.0,"game, ",0.0,
+2018-02,3.0,"ucash, geocoin, polymath, ",1.0,"ucash, ",1.0,"ucash, ",0.0,
+2018-03,1.0,"paccoin, ",1.0,"paccoin, ",1.0,"paccoin, ",0.0,
+2018-04,0.0,,0.0,,0.0,,0.0,
+2018-05,2.0,"bytecoin, daostack, ",1.0,"bytecoin, ",1.0,"bytecoin, ",1.0,"bytecoin, "
+2018-06,2.0,"smartlands, cvnx, ",0.0,,0.0,,0.0,
+2018-07,1.0,"mybit-token, ",1.0,"mybit-token, ",0.0,,0.0,
+2018-08,0.0,,0.0,,0.0,,0.0,
+2018-09,0.0,,0.0,,0.0,,0.0,
+2018-10,0.0,,0.0,,0.0,,0.0,
+2018-11,2.0,"emercoin, agrello, ",1.0,"agrello, ",0.0,,0.0,
+2018-12,1.0,"solve-care, ",0.0,,0.0,,0.0,
+2019-01,0.0,,0.0,,0.0,,0.0,
+2019-02,1.0,"bitball, ",0.0,,0.0,,0.0,
+2019-03,5.0,"ormeuscoin, aeur, swarm, bitcoinx, ",3.0,"ormeuscoin, swarm, bitcoinx, ",2.0,"ormeuscoin, swarm, ",0.0,
+2019-04,0.0,,0.0,,0.0,,0.0,
+2019-05,1.0,"skrumble-network, ",1.0,"skrumble-network, ",1.0,"skrumble-network, ",0.0,
+2019-06,0.0,,0.0,,0.0,,0.0,
+2019-07,1.0,"presearch, ",0.0,,0.0,,0.0,
+2019-08,7.0,"pantheon-x, realtract, qredit, yocoin, bitcoinx, ",1.0,"pantheon-x, ",1.0,"pantheon-x, ",0.0,
+2019-09,9.0,"dprating, realtract, yocoin, bitcoinx, ",2.0,"realtract, yocoin, ",1.0,"realtract, ",0.0,
+2019-10,6.0,"pantheon-x, ormeus-ecosystem, newyork-exchange, ",2.0,"ormeus-ecosystem, newyork-exchange, ",2.0,"ormeus-ecosystem, newyork-exchange, ",1.0,"ormeus-ecosystem, "
+2019-11,0.0,,0.0,,0.0,,0.0,
+2019-12,4.0,"safeinsure, whitecoin, connectome, ",3.0,"safeinsure, whitecoin, ",0.0,,0.0,
+2020-01,7.0,"evedo, whitecoin, bitcoinx, ",6.0,"evedo, whitecoin, ",4.0,"whitecoin, ",0.0,
+2020-02,6.0,"siaprime-coin, whitecoin, eth3s, zano, ",4.0,"whitecoin, eth3s, ",3.0,"whitecoin, eth3s, ",0.0,
+2020-03,5.0,"acute-angle-cloud, eth3s, gleec-coin, jetcoin, ",5.0,"acute-angle-cloud, eth3s, gleec-coin, jetcoin, ",4.0,"eth3s, gleec-coin, jetcoin, ",3.0,"eth3s, jetcoin, "
+2020-04,1.0,"eth3s, ",1.0,"eth3s, ",1.0,"eth3s, ",0.0,
+2020-05,6.0,"herocoin, pantheon-x, coindom, sora, freedomcoin, ",3.0,"herocoin, pantheon-x, sora, ",1.0,"pantheon-x, ",0.0,
+2020-06,4.0,"zelaapayae, eth3s, ",3.0,"eth3s, ",0.0,,0.0,
+2020-07,8.0,"acute-angle-cloud, eth3s, counosx, ",8.0,"acute-angle-cloud, eth3s, counosx, ",3.0,"acute-angle-cloud, ",1.0,"acute-angle-cloud, "
+2020-08,4.0,"linkcoin-token, alliance-x-trading, bitcoin-god, ",0.0,,0.0,,0.0,
+2020-09,14.0,"globalboost, qqq-token, aleph, pickle-finance, acute-angle-cloud, monero-classic-xmc, noia-network, lua-token, triumphx, unicorn-token, ",11.0,"globalboost, qqq-token, pickle-finance, acute-angle-cloud, lua-token, triumphx, unicorn-token, ",9.0,"pickle-finance, acute-angle-cloud, lua-token, triumphx, unicorn-token, ",5.0,"pickle-finance, acute-angle-cloud, unicorn-token, "
+2020-10,14.0,"vectorium, qqq-token, matrix-ai-network, payrue, triumphx, bitica-coin, salmon, ",10.0,"qqq-token, matrix-ai-network, triumphx, bitica-coin, ",9.0,"qqq-token, triumphx, bitica-coin, ",0.0,
+2020-11,7.0,"vectorium, matrix-ai-network, triumphx, ",5.0,"triumphx, ",5.0,"triumphx, ",0.0,
+2020-12,5.0,"bintex-futures, triumphx, bitica-coin, axion, ",5.0,"bintex-futures, triumphx, bitica-coin, axion, ",5.0,"bintex-futures, triumphx, bitica-coin, axion, ",0.0,
+2021-01,10.0,"vectorium, shiba-inu, everycoin, cocos-bcx, donut, triumphx, cvnx, peos, bitcoinx, amond, ",6.0,"vectorium, shiba-inu, everycoin, cocos-bcx, donut, amond, ",4.0,"shiba-inu, cocos-bcx, donut, amond, ",3.0,"shiba-inu, cocos-bcx, donut, "
+2021-02,8.0,"cat-token, zyx, cryptoflow, marscoin, pay-coin, beholder, spaceswap-milk2, bitcoin-god, ",6.0,"cat-token, marscoin, pay-coin, beholder, spaceswap-milk2, bitcoin-god, ",5.0,"cat-token, marscoin, pay-coin, beholder, spaceswap-milk2, ",1.0,"pay-coin, "
+2021-03,11.0,"myce, paid-network, modex, coindom, bitball, cvnx, hydro, bitcoin-god, ",8.0,"paid-network, bitball, cvnx, hydro, bitcoin-god, ",8.0,"paid-network, bitball, cvnx, hydro, bitcoin-god, ",1.0,"paid-network, "
+2021-04,17.0,"hupayx, bloc-money, feg-token-bsc, coindom, spore, swtcoin, akita-inu, cvnx, monerov, bitcoin-god, helleniccoin, ",7.0,"hupayx, feg-token-bsc, spore, akita-inu, monerov, bitcoin-god, ",6.0,"feg-token-bsc, spore, akita-inu, monerov, bitcoin-god, ",2.0,"spore, akita-inu, "
+2021-05,17.0,"jindo-inu, exchangecoin, maxcoin, deracoin, flowchaincoin, pegazus-finance, riceswap, pinkmoon, secured-moonrat-token, jack-token, cvnx, hydro, hodl-token, litecash, bitcoin-god, ",12.0,"jindo-inu, deracoin, pegazus-finance, riceswap, pinkmoon, jack-token, cvnx, hodl-token, litecash, bitcoin-god, ",4.0,"jindo-inu, pegazus-finance, riceswap, bitcoin-god, ",0.0,
+2021-06,17.0,"lightyears, ethereummax, catge-coin, xido-finance, jindo-inu, palgold, hara-token, phuture, bonfire, hydro, hashpanda, bitcoin-god, ",12.0,"ethereummax, catge-coin, xido-finance, jindo-inu, hara-token, bonfire, bitcoin-god, ",8.0,"ethereummax, xido-finance, jindo-inu, hara-token, bitcoin-god, ",2.0,"ethereummax, jindo-inu, "
+2021-07,16.0,"bitsten-token, blank, wilder-world, kick, acute-angle-cloud, arix, chaincade, bafi-finance-token, dashsports, floki, safu-protocol, keysians-network, bitcoin-god, option-panda-platform, starlink, ",12.0,"blank, wilder-world, kick, acute-angle-cloud, arix, bafi-finance-token, floki, keysians-network, bitcoin-god, option-panda-platform, starlink, ",9.0,"blank, wilder-world, kick, acute-angle-cloud, floki, keysians-network, option-panda-platform, starlink, ",1.0,"starlink, "
+2021-08,17.0,"pitbull, hupayx, pikachu, moon-rabbit, trustverse, bone-shibaswap, ethos, defis-network, gambler-shiba, bird-money, bafi-finance-token, tenshi, valobit, zeon, bitcoin-god, ",10.0,"pitbull, hupayx, moon-rabbit, trustverse, bone-shibaswap, ethos, defis-network, bafi-finance-token, zeon, bitcoin-god, ",7.0,"pitbull, moon-rabbit, trustverse, bone-shibaswap, ethos, defis-network, bitcoin-god, ",1.0,"pitbull, "
+2021-09,22.0,"cryptozoo, bondly, banksocial, kimchi-finance, yummy, trustverse, giftedhands, koji, bytz, goldfinx, atlas-protocol, cvnx, wadzpay-token, steam-exchange, gamefi, bitcoin-god, ",12.0,"cryptozoo, bondly, giftedhands, goldfinx, atlas-protocol, cvnx, wadzpay-token, steam-exchange, gamefi, bitcoin-god, ",8.0,"cryptozoo, giftedhands, goldfinx, atlas-protocol, wadzpay-token, gamefi, bitcoin-god, ",0.0,
+2021-10,27.0,"cryptozoo, banksocial, catgirl, pitbull, nexdax, little-bunny-rocket, sensitrust, babb, aventus, triipmiles, content-value-network, foxgirl, rocket-raccoon, strikecoin, catzcoin, brick-token, planet-sandbox, spacegrime, dogebonk, swarm-markets, king-shiba, baby-shiba-inu, cvnx, bitcoin-god, corgicoin, ",17.0,"cryptozoo, banksocial, catgirl, pitbull, nexdax, little-bunny-rocket, sensitrust, babb, content-value-network, foxgirl, rocket-raccoon, catzcoin, planet-sandbox, spacegrime, king-shiba, bitcoin-god, corgicoin, ",12.0,"nexdax, little-bunny-rocket, sensitrust, content-value-network, foxgirl, rocket-raccoon, catzcoin, planet-sandbox, spacegrime, king-shiba, bitcoin-god, corgicoin, ",1.0,"content-value-network, "
+2021-11,24.0,"pitbull, avinoc, electric-vehicle-direct-currency, wojak-finance, scientia, acute-angle-cloud, zyx, zipmex-token, moonlight-token, hokkaidu-inu, per-project, red-pulse, shibacorgi, hare-token, silent-notary, dojo, wifedoge, copycat-finance, avnrich, baby-floki-coin, magic-beasties, ",14.0,"pitbull, scientia, acute-angle-cloud, zyx, zipmex-token, hokkaidu-inu, red-pulse, hare-token, silent-notary, dojo, copycat-finance, avnrich, ",10.0,"pitbull, acute-angle-cloud, zipmex-token, red-pulse, hare-token, dojo, copycat-finance, avnrich, ",4.0,"dojo, avnrich, "
+2021-12,15.0,"contracoin, la-peseta, arti-project, eminer, archangel-token, nft-stars, dogegayson, freeway, new-year-token, decimated, dojo, rps-league, asyagro, helleniccoin, defily, ",7.0,"la-peseta, eminer, dogegayson, new-year-token, decimated, dojo, rps-league, ",6.0,"eminer, dogegayson, new-year-token, decimated, dojo, rps-league, ",2.0,"eminer, dojo, "
+2022-01,18.0,"proxy, sensitrust, bitcoin-br, trustverse, acute-angle-cloud, psyoptions, cap, megatech, unix, jacy, ormeus-cash, ruff, predictcoin, bitcoin-god, defily, cleardao, ",12.0,"sensitrust, bitcoin-br, psyoptions, megatech, jacy, ormeus-cash, ruff, predictcoin, bitcoin-god, cleardao, ",6.0,"sensitrust, bitcoin-br, psyoptions, megatech, ruff, cleardao, ",0.0,
+2022-02,14.0,"cashbackpro, permission-coin, bunscake, bobs_repair, urus-token, tudabirds, stobox-token, eth-fan-token, silva-token, bitcoin-god, ",7.0,"cashbackpro, bunscake, bobs_repair, tudabirds, bitcoin-god, ",2.0,"cashbackpro, bobs_repair, ",0.0,
+2022-03,11.0,"bridge-oracle, defiato, revolotto, star-wars-cat, acute-angle-cloud, kiba-inu, vaiot, bitcoin-god, ",7.0,"bridge-oracle, revolotto, star-wars-cat, kiba-inu, vaiot, bitcoin-god, ",4.0,"bridge-oracle, revolotto, star-wars-cat, vaiot, ",0.0,
+2022-04,22.0,"zik-token, eminer, helpseed, rubix, sensitrust, blocsport-one, gamerse, youcash, goblin, indian-shiba-inu, gem-exchange-and-trading, bitcoin-god, bomb, medical-token-currency, ",3.0,"helpseed, rubix, gem-exchange-and-trading, ",1.0,"gem-exchange-and-trading, ",0.0,
+2022-05,25.0,"kleekai, metagamz, zik-token, eminer, wrapped-busd-allbridge-from-bsc, panicswap, bittorrent-old, facedao, cloudname, advanced-united-continent, gene, fountain-protocol, yourkiss, unicorn-token, wrapped-cusd-allbridge-from-celo, lightcoin, zatcoin-2, pollchain, bitcoin-god, ",12.0,"zik-token, eminer, wrapped-busd-allbridge-from-bsc, facedao, cloudname, advanced-united-continent, gene, yourkiss, unicorn-token, wrapped-cusd-allbridge-from-celo, bitcoin-god, ",8.0,"wrapped-busd-allbridge-from-bsc, facedao, cloudname, advanced-united-continent, gene, unicorn-token, wrapped-cusd-allbridge-from-celo, bitcoin-god, ",1.0,"unicorn-token, "
+2022-06,19.0,"revolotto, zenc-coin, zik-token, shibadoge, kitty-coin-solana, mm72, saitama-inu, pollchain, silva-token, bitcoin-god, tenset, ideachain, ",13.0,"revolotto, zenc-coin, shibadoge, kitty-coin-solana, mm72, saitama-inu, pollchain, silva-token, bitcoin-god, tenset, ",5.0,"zenc-coin, kitty-coin-solana, saitama-inu, silva-token, tenset, ",1.0,"zenc-coin, "
+2022-07,9.0,"pawn-my-nft, meta-mvrs, viking-elon, gstcoin, waultswap, icommunity, muu-inu, pollchain, kujira, ",1.0,"meta-mvrs, ",1.0,"meta-mvrs, ",0.0,
+2022-08,9.0,"genopet-ki, mycelium, stkd-scrt, decentralized-mining-exchange, spartacus, xtrabytes, ",6.0,"genopet-ki, mycelium, decentralized-mining-exchange, spartacus, xtrabytes, ",2.0,"genopet-ki, mycelium, ",0.0,
+2022-09,15.0,"franklin, elon-goat, poo-doge, acetoken, bytecoin, spartacus, teddy-doge, got-guaranteed, ",7.0,"franklin, poo-doge, bytecoin, spartacus, got-guaranteed, ",2.0,"franklin, got-guaranteed, ",1.0,"franklin, "
+2022-10,11.0,"starkmeta, daolaunch, hashbit, acreage-coin, metarare, drunk-robots, scholarship-coin, porta, metronome, goldminer, ideachain, ",5.0,"hashbit, metarare, drunk-robots, porta, goldminer, ",2.0,"hashbit, goldminer, ",1.0,"goldminer, "
+2022-11,12.0,"spacelens, zenc-coin, aureo, daolaunch, fable-of-the-dragon, stableusd, shibadoge, spartacus, sonm, safuu, ideachain, ",5.0,"aureo, fable-of-the-dragon, sonm, safuu, ideachain, ",4.0,"aureo, sonm, safuu, ideachain, ",1.0,"sonm, "
+2022-12,12.0,"tnc-coin, maya-preferred-223, euro-coin, pi-network-iou, trace-network-labs, sandwich-network, azit, spartacus, ideachain, ",11.0,"tnc-coin, maya-preferred-223, euro-coin, pi-network-iou, trace-network-labs, sandwich-network, azit, ideachain, ",5.0,"euro-coin, pi-network-iou, trace-network-labs, sandwich-network, azit, ",1.0,"pi-network-iou, "
+2023-01,13.0,"dexo, daolaunch, plc-ultima, metoshi, grove, spartacus, eth3s, bitconey, ",4.0,"dexo, plc-ultima, metoshi, ",3.0,"dexo, plc-ultima, ",0.0,
+2023-02,11.0,"galaxy-arena, pomo, ecs-gold, point-coin, stabilize, defigram, shibadoge, turk-shiba, helpkidz-coin, iguverse, qanplatform, ",6.0,"pomo, ecs-gold, defigram, helpkidz-coin, iguverse, qanplatform, ",4.0,"defigram, helpkidz-coin, iguverse, qanplatform, ",2.0,"helpkidz-coin, iguverse, "
+2023-03,15.0,"tribe-token, zedxion, pomo, huobi-btc, tolar, wrapped-huobi-token, uramaki, huobi-ethereum, bitcoinbam, shibadoge, monopoly-millionaire-control, spartacus, mops, ",8.0,"pomo, huobi-btc, wrapped-huobi-token, uramaki, huobi-ethereum, monopoly-millionaire-control, spartacus, mops, ",3.0,"wrapped-huobi-token, monopoly-millionaire-control, mops, ",0.0,
+2023-04,20.0,"vectorium, reapchain, usdx, tolar, nano-dogecoin, fountain-protocol, rari-governance-token, spartacus, bmchain-token, pepe-the-frog, creaticles, digital-trip-advisor, ordinal-doge, ",7.0,"reapchain, usdx, rari-governance-token, spartacus, digital-trip-advisor, ordinal-doge, ",4.0,"reapchain, rari-governance-token, spartacus, ordinal-doge, ",1.0,"reapchain, "
+2023-05,25.0,"psyop, converter-finance, sci-coin-2, yocoinyoco, kiboshib, pi-network-iou, milady-meme-coin, bogdanoff, pepedex, bedlingtonterriertoken, quick-transfer-coin-plus, usd-zee, apeswap-finance, spartacus, cope-coin, intelly, tokenplace, kitty-inu, dream-machine-token, green-shiba-inu, rendoge, ",8.0,"psyop, kiboshib, milady-meme-coin, bogdanoff, pepedex, spartacus, cope-coin, dream-machine-token, ",6.0,"psyop, kiboshib, milady-meme-coin, bogdanoff, cope-coin, dream-machine-token, ",2.0,"psyop, milady-meme-coin, "
+2023-06,20.0,"pepebrc, bscex, pomo, centrality, catgirl-optimus, bedlingtonterriertoken, the-three-kingdoms, spartacus, shinjarium, grimace-coin, the-world-state, rimaunangis, ",6.0,"bscex, catgirl-optimus, bedlingtonterriertoken, shinjarium, ",2.0,"bscex, bedlingtonterriertoken, ",1.0,"bedlingtonterriertoken, "
+2023-07,18.0,"scooby, wen-token, loyalty-labs, ai-x, magic-cube, cacao, universal-basic-income, bedlingtonterriertoken, oxbitcoin, punk-vault-nftx, stride-staked-atom, energi, magic-shoes, paal-ai, lookscoin, bart-simpson-coin, crosswallet, ",10.0,"scooby, loyalty-labs, ai-x, magic-cube, cacao, universal-basic-income, oxbitcoin, energi, paal-ai, crosswallet, ",6.0,"scooby, loyalty-labs, ai-x, cacao, oxbitcoin, crosswallet, ",1.0,"cacao, "
+2023-08,10.0,"yocoinyoco, nft-stars, geke, coinhub, wolf-game-wool, toshi, bobo, messier, haram, feeder-finance, ",4.0,"yocoinyoco, geke, coinhub, haram, ",1.0,"yocoinyoco, ",0.0,
+2023-09,19.0,"solarx, microcredittoken, releap, vrjam, emoticoin, amber-phantom-butterfly, pomerium, degate, chaintools, meme-inu, antis-inu, anon, wolf-game-wool, rangers-protocol-gas, refinable, arkadiko-usda, spotted-turtle, ",5.0,"solarx, amber-phantom-butterfly, spotted-turtle, ",5.0,"solarx, amber-phantom-butterfly, spotted-turtle, ",1.0,"spotted-turtle, "
+2023-10,15.0,"yocoinyoco, ozonechain, decubate, amber-phantom-butterfly, felix, prisma-mkusd, rangers-protocol-gas, kenda, spotted-turtle, ",4.0,"yocoinyoco, decubate, amber-phantom-butterfly, spotted-turtle, ",2.0,"yocoinyoco, decubate, ",0.0,
+MEAN,8.304878048780488,,4.378048780487805,,2.7439024390243905,,0.5365853658536586,
+MEDIAN,6.5,,3.0,,2.0,,0.0,

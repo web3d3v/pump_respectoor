@@ -3,51 +3,63 @@
 
 Analyzing the frequency of pumps of coins listed on [Coin Gecko](https://www.coingecko.com/).
 
-## NOTE: A lot of frequent changes. README lags behind, will be updated once it settles
-
 ## Usage 
-Use `main.ipynb` to analyze the data
+Coin Gecko has `coins/${ID}/chart range` api that returns historical daily close
+price alongside volume. These cross day pumps are analyzed in 
+`analysis_chart.ipynb` [jupyter lab notebook](https://jupyter.org/install).
 
-NOTE: Changes frequently, README might lag. 
+However, a lot of the pumps happen within single data. open to high price. 
+`coins/${ID}/ohlc` endpoint provides timestamped daily candle. But without a 
+volume. `analysis_chart.ipynb` combines chart and ohlc data together and 
+finds all pumps. Plots the data and saves it to `results` folder.
 
-`download_all_coins` downloads coin list from `/coins/list` endpoint and stores 
-in `data/coins.json`.
+### Download data
 
-`download_markets` downloads usd market for each coin from `coins/markets` 
-endpoint. Stores in `data/markets.json`. Mainly used for rank and marketcap
+To download data run `main.py`. Make sure to comment out data you don't want to    
+download. __Some endpoints are only available with paid API key__ (daily ohlc).
+There are three download modes. See `api = CoinGeckoAPI(ExecPolicy.API_KEY)` in 
+`main.py`
+- __SLEEP__ Simply sleeps when requests limit per minute is reached. Takes days 
+  to download all data. 
 
-`download_chart_data` downloads historical usd chart data (price, volume) from
-`coins/${COIN_GECKO_ID}/market_chart/range` endpoint to 
-`data/chart/${COIN_GECKO_ID}_usd_chart_data.json`. 10k plus files.
+- __VPN__ Switches to different openVPN profile when free API limit is reached. 
+  In thoery it should work with any open VPN profile. Was only tested  with 
+  proton mail VPN. You can create free [protonmail](proton.me) account and 
+  download profiles at [OpenVpnIKEv2 profiles](https://account.proton.me/u/0/vpn/OpenVpnIKEv2) Needs `.env` 
+  `VPN_USER=${YOUR_USER}` & `VPN_PASS=${YOUR_PASS}` and profiles in 
+  `vpn_switcher/profiles`. Has to be run with root privileges to switch VPN. 
+  Takes just over a day to download all data.
 
-`dowload_candles` download historical candles `coins/${COIN_GECKO_ID}/ohlc`
-stores to `data/candles/${COIN_GECKO_ID}.json`
+- __API_KEY__ Stays within requests per minute of lowest paid API tier. Download 
+  time about ~24h. Needs `COIN_GECKO_API=${YOUR_API_KEY}` in `.env` file.
 
-Run `sudo python3 main.py` to download everything to `data/`. Will take about 
-24h. then use main.ipynb to analyze data. Needs root privileges for VPN switching.
+  
+## Results
 
+Detailed results are in cvs files in `/results`. A few highlights.
+I've finished pump analyses. I never would have though in this market you've got
+2 coins a day, with at least $1mil volume on pump day doing 2x. You've got 8x 
+every 4.5 days with $1mil volume. For 1.5x you've got 5.33 coins doing that 
+every day with at least $1mil volume on the pump day. These number continue to 
+blow my mind. That's out 10k coins on Goin Gecko.
+![1.5x](results/1.5x.png)
+![2x](results/2x.png)
+![4x](results/4x.png)
+![8x](results/8x.png)
 
-## Download data
+Here are coins that did 2x with at least $1mil volume on pump day in October 
+2023 so far:
+```
+yocoinyoco, roaland-core, decubate, polaris-share, sundae-the-dog, cryptopawcoin,
+zuzuai, pay-coin, blackpearl-chain, equitypay, seiren-games-network, hxacoin, 
+mind-matrix, gameai, apes-go-bananas, big-time,  
+```
 
-Within a day or two data file would linked here. With exception of candle data
-as it requires paid coin gecko account. You can download the data your self.
+All the results are in `results` folder.
 
-### VPN Config
-Since Coin Gecko has 30 requests per minute limit for free API tear. Random VPN
-profiles are used to scrape data faster. You can either create free
-[protonmail](proton.me) account and download profiles at [OpenVpnIKEv2 profiles](https://account.proton.me/u/0/vpn/OpenVpnIKEv2)
-. In theory should was with any openVPN profiles but untested. 
+Looking at just cross days pump (more data available). Even in bear market.
+Pumps are live and well.
 
-If you don't want to use VPN, replace `VPNSwitcher` with `SleepSwitcher`. This 
-will increase scraping significantly. Instead of switching VPN it sleeps for 
-5min. Currently, scraping takes about 24 hours with VPN. Without it would be 
-days.
-
-Highly recommended to run in the VM as VPN connection with change frequently
-
-`.env` needs `VPN_USER=${YOUR_USER}` & `VPN_PASS=${YOUR_PASSdk}`. If downloading
-candle data `COIN_GECKO_API=${YOUR_API_KEY}` as well. 
-
-
+![2x](results/chart_2x.png)
 
 

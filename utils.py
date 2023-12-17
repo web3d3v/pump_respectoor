@@ -25,13 +25,16 @@ def std_headers():
 
 
 def get_ip():
-    endpoint = 'https://ipinfo.io/json'
-    response = requests.get(endpoint, verify=True)
-    if response.status_code != 200:
-        return 'Status:', response.status_code, 'Problem with the request. Exiting.'
-        exit()
-    data = response.json()
-    return data['ip']
+    try:
+        endpoint = 'https://ipinfo.io/json'
+        response = requests.get(endpoint, verify=True)
+        if response.status_code != 200:
+            return 'Status:', response.status_code, 'Problem with the request. Exiting.'
+        data = response.json()
+        return data['ip']
+    except:
+        print("Failed to obtain ip address")
+        return None
 
 
 def create_data_folders_if_needed():
@@ -42,6 +45,7 @@ def create_data_folders_if_needed():
         'data/chart_auto',
         'data/chart_full',
         'data/coin',
+        'data/image',
     ]
     for path in paths:
         if not os.path.exists(path):
@@ -61,9 +65,18 @@ def read_json_file(path: str) -> object:
 
 
 def write_json_file(path: str, data: any):
-    if data is not None:
-        with open(path, 'w') as f:
-            f.write(json.dumps(data))
+    # if data is not None:
+    #     with open(path, 'w') as f:
+    #         t = json.dumps(data)
+    #         f.write(t)
+    if data is None:
+        return
+    try:
+        f = open(path, 'w')
+        f.write(json.dumps(data))
+        f.close()
+    except IOError as err:
+        print("I/O error: {}".format(err))
 
 
 def get_info() -> Dict[any, any]:

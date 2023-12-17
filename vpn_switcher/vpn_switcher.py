@@ -1,6 +1,7 @@
 import os
 import pathlib
 import time
+import random
 from typing import List
 from inspect import getsourcefile
 from os.path import abspath
@@ -60,7 +61,7 @@ class VPNSwitcher(VPNSwitcherInterface):
         self.process.start()
         # need to sleep 5 min / len(profiles) to ensure each profile is hit at
         # most once every 5 min.
-        time.sleep(300.0 / float(len(self.profiles)))
+        time.sleep(300.0 / float(len(self.profiles)) + 1)
 
     def next(self):
         self.curr_profile_idx += 1
@@ -69,7 +70,10 @@ class VPNSwitcher(VPNSwitcherInterface):
         self.connect(self.profiles[self.curr_profile_idx])
 
     def __load_profiles(self, path: str) -> List[str]:
-        return os.listdir(path)
+        profiles = os.listdir(path)
+        # profiles = reversed(profiles)
+        random.shuffle(profiles)
+        return profiles
 
 
 class SleepSwitcher(VPNSwitcherInterface):

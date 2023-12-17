@@ -26,7 +26,7 @@ def download_markets(api: CoinGeckoAPI) -> List[Dict[str, any]]:
         if response is None:
             print_progress('Unexpected error (markets):', page, page_total)
             print("Failed requests", api.failed_requests)
-            break
+            raise Exception('Failed to laod markets')
         page_markets = json.loads(response)
         result_markets += page_markets
         print_progress('Download markets', page, page_total)

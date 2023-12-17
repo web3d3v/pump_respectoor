@@ -4,7 +4,7 @@ import traceback
 
 import requests
 from enum import Enum
-from utils import std_headers
+from utils import std_headers, get_ip
 from vpn_switcher.vpn_switcher import VPNSwitcherInterface, VPNSwitcher
 from typing import List, Dict
 from dotenv import load_dotenv
@@ -37,11 +37,11 @@ class CoinGeckoAPI:
         self.failed_requests: List[str] = list()
 
         if exec_policy == ExecPolicy.VPN:
-            vpn_switcher = VPNSwitcher(
+            self.vpn_switcher = VPNSwitcher(
                 os.environ.get("VPN_USER"),
                 os.environ.get("VPN_PASS"),
             )
-            vpn_switcher.next()
+            self.vpn_switcher.next()
 
         if exec_policy == ExecPolicy.API_KEY:
             self.api_key = os.environ.get("COIN_GECKO_API")
@@ -62,15 +62,21 @@ class CoinGeckoAPI:
             print("An exception occurred", url)
             traceback.print_exc()
 
-            if retry_cnt < 0:
+            match self.exec_policy:
+                case ExecPolicy.SLEEP:
+                    time.sleep(300)
+                case ExecPolicy.API_KEY:
+                    # Should never get to this state
+                    time.sleep(300)
+                case ExecPolicy.VPN:
+                    self.vpn_switcher.next()
+                    print("\n\nIp {}\n\n".format(get_ip()))
+
+            if retry_cnt <= 0:
                 self.failed_requests.append(url)
                 print("Failed requests", self.failed_requests)
-                return None
+                return response
 
-            if retry_cnt > 0:
-                time.sleep(5)
-
-            time.sleep(5 if retry_cnt > 0 else 300)
             return self.fetch_response(url, retry_cnt - 1)
 
         if response.status_code == 429:
@@ -83,13 +89,14 @@ class CoinGeckoAPI:
                     time.sleep(300)
                 case ExecPolicy.VPN:
                     self.vpn_switcher.next()
+                    print("\n\nIp {}\n\n".format(get_ip()))
 
             if retry_cnt <= 0:
                 self.failed_requests.append(url)
                 print("Failed requests", self.failed_requests)
                 return response
 
-            self.fetch_response(url, retry_cnt - 1)
+            return self.fetch_response(url, retry_cnt - 1)
 
         return response
 

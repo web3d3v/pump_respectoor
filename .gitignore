@@ -169,3 +169,4 @@ data/candles_daily/*.json
 data/candles_auto/*.json
 data/coin/*.json
 vpn_switcher/vpn_profiles/**
+results/pickled/*

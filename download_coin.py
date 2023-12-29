@@ -5,7 +5,7 @@ from typing import List, Dict
 import json
 import pandas as pd
 import os
-from utils import write_json_file, print_progress
+from utils import write_json_file, print_progress, read_json_file
 
 
 def download_coin_datas(
@@ -43,3 +43,14 @@ def download_coin_data(
 #     df = df.set_index('timestamp')
 #     return df
 #
+
+
+def get_address_and_decimals(coin_id: str) -> (str, int):
+    coin = read_json_file('data/coin/' + coin_id + '.json')
+    detail_platforms = coin.get('detail_platforms')
+    if detail_platforms is None:
+        return None, None
+    ethereum = detail_platforms.get('ethereum')
+    if ethereum is None:
+        return None, None
+    return ethereum.get('contract_address'), ethereum.get('decimal_place')

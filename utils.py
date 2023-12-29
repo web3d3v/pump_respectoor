@@ -7,9 +7,11 @@ from datetime import datetime
 from typing import List, Dict
 
 
-def print_progress(prefix: str, curr: int, total: int, same_line: bool = True):
+def print_progress(prefix: str, curr: int, total: int, same_line: bool = True, st_time: float = None):
     page_str = 'idx: {} / {}'.format(curr, total)
     prog_str = ', {:.1%}'.format(float(curr) / float(total))
+    if st_time is not None:
+        prog_str += ' ' + str(time.time() - st_time) + 's'
     space = '       '
     if same_line:
         print('\r', prefix, page_str + prog_str + space, end='')
@@ -46,6 +48,8 @@ def create_data_folders_if_needed():
         'data/chart_full',
         'data/coin',
         'data/image',
+        'results',
+        'results/transfer_logs'
     ]
     for path in paths:
         if not os.path.exists(path):
@@ -62,6 +66,11 @@ def sleep(seconds: int):
 def read_json_file(path: str) -> object:
     with open(path, 'r') as f:
         return json.load(f)
+
+
+def read_str_file(path: str) -> str:
+    with open(path, 'r') as f:
+        return f.read()
 
 
 def write_json_file(path: str, data: any):
@@ -117,6 +126,10 @@ def year_month_str(timestamp: int) -> str:
     return datetime.utcfromtimestamp(timestamp).strftime('%Y-%m')
 
 
+def year_month_day_str(timestamp: int) -> str:
+    return datetime.utcfromtimestamp(timestamp).strftime('%Y-%m-%d')
+
+
 def year_month_keys(years: List[int], months: List[int]) -> List[str]:
     keys: List[str] = list()
     for year in years:
@@ -132,6 +145,16 @@ def large_num_short_format(num):
         magnitude += 1
         num /= 1000.0
     return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
+
+
+def ranges_list(frm: int, to: int, batch_size: int) -> List[any]:
+    cur_frm = frm
+    ranges = list()
+    while cur_frm < to:
+        ranges.append((cur_frm, min(cur_frm + batch_size, to)))
+        cur_frm += batch_size
+    return ranges
+
 
 # db = mysql.connector.connect(
 #     host=os.environ.get("DB_HOST"),

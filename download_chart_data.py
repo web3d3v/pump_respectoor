@@ -4,6 +4,8 @@ from utils import print_progress, write_json_file, read_json_file, get_info, set
 from typing import List, Dict
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from tqdm import tqdm
+from multiprocessing import Pool, cpu_count
 import json
 import os
 import pandas as pd
@@ -91,7 +93,7 @@ def load_chart_by_interval(
     return charts
 
 
-def chart_data_to_df(chart_data: List[Dict[str, any]], ) -> pd.DataFrame:
+def chart_data_to_df(chart_data: List[Dict[str, any]]) -> pd.DataFrame:
     tss = map(lambda x: int(x[0] / 1000), chart_data["prices"])
     vals = map(lambda x: x[1], chart_data["prices"])
     df = pd.DataFrame(data={'timestamp': tss, "price": vals})
@@ -111,6 +113,25 @@ def chart_data_to_df(chart_data: List[Dict[str, any]], ) -> pd.DataFrame:
     df = df.rename(columns={'total_volume': 'volume'})
 
     return df
+
+
+def charts_dict_to_dfs(
+    charts: Dict[str, Dict[str, any]]
+) -> Dict[str, pd.DataFrame]:
+    df_charts: Dict[str, pd.DataFrame] = dict()
+    vals = charts.values()
+    dfs = list()
+
+    with Pool(processes=cpu_count()) as p:
+        for df in tqdm(p.imap(chart_data_to_df, vals), total=len(vals)):
+            dfs.append(df)
+            p.close()
+            p.join()
+
+    for idx, key in enumerate(charts):
+        df_charts[key] = dfs[idx]
+
+    return df_charts
 
 
 def from_for_interval(interval: ChartInterval) -> int:

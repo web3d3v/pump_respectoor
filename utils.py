@@ -6,17 +6,24 @@ import os
 from datetime import datetime
 from typing import List, Dict
 
+SPACE = '       '
 
-def print_progress(prefix: str, curr: int, total: int, same_line: bool = True, st_time: float = None):
+
+def print_progress(
+    prefix: str,
+    curr: int,
+    total: int,
+    same_line: bool = True,
+    st_time: float = None
+):
     page_str = 'idx: {} / {}'.format(curr, total)
     prog_str = ', {:.1%}'.format(float(curr) / float(total))
     if st_time is not None:
         prog_str += ' ' + str(time.time() - st_time) + 's'
-    space = '       '
     if same_line:
-        print('\r', prefix, page_str + prog_str + space, end='')
+        print('\r', prefix, page_str + prog_str + SPACE, end='')
     else:
-        print(prefix, page_str + prog_str + space)
+        print(prefix, page_str + prog_str + SPACE)
 
 
 def std_headers():
